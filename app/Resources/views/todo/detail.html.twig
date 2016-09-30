@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <a class="btn btn-default" href="/symfony/web/app_dev.php/todo">Back to list</a>
+    <hr>
+    <h3 class="page_header">Todo Create</h3>
+    <ul class="list-group">
+        <li class="list-group-item">Name : {{ data.name }}</li>
+        <li class="list-group-item">Category : {{ data.category }}</li>
+        <li class="list-group-item">Description : {{ data.description }}</li>
+        <li class="list-group-item">Priority : {{ data.priority }}</li>
+        <li class="list-group-item">Date : <strong>{{ data.date|date }}</strong></li>
+    </ul>
+{% endblock %}
