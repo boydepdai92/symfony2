@@ -26,10 +26,25 @@
                 <td>
                     <a href="/symfony2/web/app_dev.php/todo/detail/{{ item.id }}" class="btn btn-success">View</a>
                     <a href="/symfony2/web/app_dev.php/todo/edit/{{ item.id }}" class="btn btn-default">Edit</a>
-                    <a href="/symfony2/web/app_dev.php/todo/delete/{{ item.id }}" class="btn btn-danger">Delete</a>
+                    <a href="/symfony2/web/app_dev.php/todo/delete/{{ item.id }}" class="btn btn-danger delete">Delete</a>
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
+    {%block myjavascript %}
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+        <script>
+           $(document).ready(function () {
+                $('.delete').click(function(){
+                    var status = confirm('Bạn có chắc chắn muốn xóa không ?');
+                    if (status) {
+                        return true;
+                    } else{
+                        return false;
+                    }
+                })
+           })
+        </script>
+    {% endblock %}
 {% endblock %}
